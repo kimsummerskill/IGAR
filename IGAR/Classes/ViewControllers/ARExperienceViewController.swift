@@ -102,20 +102,16 @@ class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSession
                 return nil
             }
 
-//            let box = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
-//            let material = SCNMaterial()
-//            material.diffuse.contents = UIImage(named: "ig_image")
-//            box.materials = [material]
-//            let node = SCNNode(geometry: box)
-
+            // Using a cube for now
+            let box = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
+            let material = SCNMaterial()
             
-            // Make a sphere and texturise it with the reference image
-            let node = SCNNode(geometry: SphereObject(interactionId: name, radius: 0.01, texture: "ig_image"))
+            // Image name will be the prefix of the image group
+            material.diffuse.contents = UIImage(named: name)
+            box.materials = [material]
+            let node = SCNNode(geometry: box)
 
             node.name = name
-
-            // TODO: Set appropriate lighting model + Colour
-            node.geometry?.firstMaterial?.lightingModel = .physicallyBased
             
             nodesInPlay.append(name)
             
