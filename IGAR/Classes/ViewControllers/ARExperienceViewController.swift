@@ -67,8 +67,6 @@ class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSession
         directionalNode.light?.shadowMode = .deferred
         directionalNode.light?.shadowMapSize = CGSize(width: 2048, height: 2048)
         directionalNode.light?.shadowColor = UIColor.black.withAlphaComponent(0.75)
-        directionalNode.position = SCNVector3(x: 0.0,y: 0,z: 0.0)
-        directionalNode.eulerAngles = SCNVector3(-Float.pi / 2, 0, 0)
         
         sceneView.pointOfView?.addChildNode(directionalNode)
 
@@ -103,14 +101,21 @@ class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSession
             if nodesInPlay.contains(name) {
                 return nil
             }
+
+//            let box = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
+//            let material = SCNMaterial()
+//            material.diffuse.contents = UIImage(named: "ig_image")
+//            box.materials = [material]
+//            let node = SCNNode(geometry: box)
+
             
             // Make a sphere and texturise it with the reference image
-            // TODO: Light for colour
-            let node = SCNNode(geometry: SphereObject(interactionId: name, radius: 0.01, texture: referenceImageName))
-            
+            let node = SCNNode(geometry: SphereObject(interactionId: name, radius: 0.01, texture: "ig_image"))
+
             node.name = name
-            
-            node.geometry?.firstMaterial?.lightingModel = .phong
+
+            // TODO: Set appropriate lighting model + Colour
+            node.geometry?.firstMaterial?.lightingModel = .physicallyBased
             
             nodesInPlay.append(name)
             
