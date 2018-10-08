@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ig_image.jpg"
+      "filename" : "20181008_155604.jpg"
     }
   ],
   "info" : {
@@ -10,6 +10,7 @@
     "author" : "xcode"
   },
   "properties" : {
-    "width" : 0.20000000000000001
+    "width" : 3,
+    "unit" : "centimeters"
   }
 }

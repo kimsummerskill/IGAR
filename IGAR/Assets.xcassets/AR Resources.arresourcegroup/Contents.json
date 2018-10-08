@@ -5,7 +5,97 @@
   },
   "resources" : [
     {
-      "filename" : "ig_image.arreferenceimage"
+      "filename" : "AAPL_GrayscaleLarge.arreferenceimage"
+    },
+    {
+      "filename" : "AAPL_GrayscaleMed.arreferenceimage"
+    },
+    {
+      "filename" : "AAPL_GrayscaleSmall.arreferenceimage"
+    },
+    {
+      "filename" : "AAPL_MacLarge.arreferenceimage"
+    },
+    {
+      "filename" : "AAPL_MacMed.arreferenceimage"
+    },
+    {
+      "filename" : "AAPL_MacSmall.arreferenceimage"
+    },
+    {
+      "filename" : "AAPL_ReverseLarge.arreferenceimage"
+    },
+    {
+      "filename" : "AAPL_ReverseMed.arreferenceimage"
+    },
+    {
+      "filename" : "AAPL_ReverseSmall.arreferenceimage"
+    },
+    {
+      "filename" : "FB_flarge.arreferenceimage"
+    },
+    {
+      "filename" : "FB_fmed.arreferenceimage"
+    },
+    {
+      "filename" : "FB_fsmall.arreferenceimage"
+    },
+    {
+      "filename" : "FB_fulllarge.arreferenceimage"
+    },
+    {
+      "filename" : "FB_fullmed.arreferenceimage"
+    },
+    {
+      "filename" : "FB_fullsmall.arreferenceimage"
+    },
+    {
+      "filename" : "GOOGL_alphabetlarge.arreferenceimage"
+    },
+    {
+      "filename" : "GOOGL_alphabetmed.arreferenceimage"
+    },
+    {
+      "filename" : "GOOGL_alphabetsmall.arreferenceimage"
+    },
+    {
+      "filename" : "GOOGL_googlelarge.arreferenceimage"
+    },
+    {
+      "filename" : "GOOGL_googlemed.arreferenceimage"
+    },
+    {
+      "filename" : "GOOGL_googlesmall.arreferenceimage"
+    },
+    {
+      "filename" : "IGG_Comp.arreferenceimage"
+    },
+    {
+      "filename" : "IGG_DullLarge.arreferenceimage"
+    },
+    {
+      "filename" : "IGG_DullMed.arreferenceimage"
+    },
+    {
+      "filename" : "IGG_DullSmall.arreferenceimage"
+    },
+    {
+      "filename" : "IGG_ReverseLarge.arreferenceimage"
+    },
+    {
+      "filename" : "IGG_ReverseMed.arreferenceimage"
+    },
+    {
+      "filename" : "IGG_ReverseSmall.arreferenceimage"
+    },
+    {
+      "filename" : "IGG_WithBackLarge.arreferenceimage"
+    },
+    {
+      "filename" : "IGG_WithBackMed.arreferenceimage"
+    },
+    {
+      "filename" : "IGG_WithBackSmall.arreferenceimage"
     }
   ]
 }
