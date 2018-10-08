@@ -5,6 +5,24 @@
   },
   "resources" : [
     {
+      "filename" : "alphabetlarge.arreferenceimage"
+    },
+    {
+      "filename" : "alphabetmed.arreferenceimage"
+    },
+    {
+      "filename" : "alphabetsmall.arreferenceimage"
+    },
+    {
+      "filename" : "googlelarge.arreferenceimage"
+    },
+    {
+      "filename" : "googlemed.arreferenceimage"
+    },
+    {
+      "filename" : "googlesmall.arreferenceimage"
+    },
+    {
       "filename" : "ig_image.arreferenceimage"
     }
   ]
