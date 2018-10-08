@@ -1,16 +1,13 @@
 {
   "images" : [
-    {
-      "idiom" : "universal",
-      "filename" : "ig_image.jpg"
-    }
+
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
   },
   "properties" : {
-    "width" : 20,
+    "width" : 9.2277777777777796,
     "unit" : "centimeters"
   }
 }
