@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		91E9705F216B9FDA00B488A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E9705E216B9FDA00B488A8 /* AppDelegate.swift */; };
 		91E97061216B9FDA00B488A8 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E97060216B9FDA00B488A8 /* Models.scnassets */; };
-		91E97063216B9FDA00B488A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E97062216B9FDA00B488A8 /* ViewController.swift */; };
 		91E97066216B9FDA00B488A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E97064216B9FDA00B488A8 /* Main.storyboard */; };
 		91E97068216B9FDD00B488A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E97067216B9FDD00B488A8 /* Assets.xcassets */; };
 		91E9706B216B9FDD00B488A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E97069216B9FDD00B488A8 /* LaunchScreen.storyboard */; };
@@ -31,6 +30,9 @@
 		91E970AF216BA46300B488A8 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E970AE216BA46300B488A8 /* SplashScreenViewController.swift */; };
 		91E970B4216BA8C600B488A8 /* SphereObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E970B3216BA8C600B488A8 /* SphereObject.swift */; };
 		91E970B6216BABC800B488A8 /* SCNMaterial+Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E970B5216BABC800B488A8 /* SCNMaterial+Texture.swift */; };
+		91F1BE99216BBE230016AD5B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1BE98216BBE230016AD5B /* DetailsViewController.swift */; };
+		91F1BE9B216BBE5A0016AD5B /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1BE9A216BBE5A0016AD5B /* DetailsViewModel.swift */; };
+		91F1BE9D216BC1010016AD5B /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1BE9C216BC1010016AD5B /* DetailsRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +56,6 @@
 		91E9705B216B9FDA00B488A8 /* IGAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E9705E216B9FDA00B488A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91E97060216B9FDA00B488A8 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
-		91E97062216B9FDA00B488A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		91E97065216B9FDA00B488A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91E97067216B9FDD00B488A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91E9706A216B9FDD00B488A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,6 +82,9 @@
 		91E970AE216BA46300B488A8 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		91E970B3216BA8C600B488A8 /* SphereObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SphereObject.swift; sourceTree = "<group>"; };
 		91E970B5216BABC800B488A8 /* SCNMaterial+Texture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNMaterial+Texture.swift"; sourceTree = "<group>"; };
+		91F1BE98216BBE230016AD5B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		91F1BE9A216BBE5A0016AD5B /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		91F1BE9C216BC1010016AD5B /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,7 @@
 				91E97094216BA0C400B488A8 /* MVVMRouter.swift */,
 				91E9709D216BA16D00B488A8 /* HomeRouter.swift */,
 				91E970A8216BA2D900B488A8 /* ARExperienceRouter.swift */,
+				91F1BE9C216BC1010016AD5B /* DetailsRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -187,10 +192,10 @@
 		91E97096216BA0C800B488A8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				91E97062216B9FDA00B488A8 /* ViewController.swift */,
 				91E970A1216BA1CF00B488A8 /* HomeViewController.swift */,
 				91E970AA216BA34600B488A8 /* ARExperienceViewController.swift */,
 				91E970AE216BA46300B488A8 /* SplashScreenViewController.swift */,
+				91F1BE98216BBE230016AD5B /* DetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			children = (
 				91E9709F216BA1A900B488A8 /* HomeViewModel.swift */,
 				91E970AC216BA3A700B488A8 /* ARExperienceViewModel.swift */,
+				91F1BE9A216BBE5A0016AD5B /* DetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -373,16 +379,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				91E970A9216BA2D900B488A8 /* ARExperienceRouter.swift in Sources */,
+				91F1BE99216BBE230016AD5B /* DetailsViewController.swift in Sources */,
 				91E97092216BA08C00B488A8 /* UICoordinator.swift in Sources */,
 				91E970AB216BA34600B488A8 /* ARExperienceViewController.swift in Sources */,
 				91E970A0216BA1A900B488A8 /* HomeViewModel.swift in Sources */,
 				91E970A4216BA25100B488A8 /* AppNavigationProtocol.swift in Sources */,
 				91E970B4216BA8C600B488A8 /* SphereObject.swift in Sources */,
+				91F1BE9B216BBE5A0016AD5B /* DetailsViewModel.swift in Sources */,
 				91E97095216BA0C400B488A8 /* MVVMRouter.swift in Sources */,
 				91E970A7216BA28D00B488A8 /* UIWindow+RootTransition.swift in Sources */,
-				91E97063216B9FDA00B488A8 /* ViewController.swift in Sources */,
 				91E9705F216B9FDA00B488A8 /* AppDelegate.swift in Sources */,
 				91E970A2216BA1CF00B488A8 /* HomeViewController.swift in Sources */,
+				91F1BE9D216BC1010016AD5B /* DetailsRouter.swift in Sources */,
 				91E970B6216BABC800B488A8 /* SCNMaterial+Texture.swift in Sources */,
 				91E970AF216BA46300B488A8 /* SplashScreenViewController.swift in Sources */,
 				91E9709C216BA13600B488A8 /* MVVMViewControllerProtocol.swift in Sources */,

@@ -14,6 +14,12 @@ import Vision
 class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, MVVMViewControllerProtocol {
     
     var viewModel: ARExperienceViewModel!
+    var detailsViewController: DetailsViewController?
+    
+//    enum DetailsPresentation {
+//        case offScreen
+//        case fullScreen
+//    }
     
     @IBOutlet var sceneView: ARSCNView!
     
@@ -96,4 +102,75 @@ class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSession
         let options: ARSession.RunOptions = [.resetTracking, .removeExistingAnchors]
         sceneView.session.run(configuration, options: options)
     }
+    
+    
+    // MARK: Video overlay methods
+    func setupExperienceFeatures() {
+        
+        // Used to present a 2d experience fullscreen when a corresponding trigger is detected
+        viewModel.present2dOverlay = { [weak self] (interactrionId: String) in
+            
+            guard let `self` = self else { return }
+            
+            // Load up the video
+            DispatchQueue.main.async {
+                self.loadDetailsOverlayWith(interactionId: interactrionId)
+            }
+        }
+        
+        // Setup our 2d overlay where the details will be displayed
+        viewModel.setupOverlayViewController = { [weak self] (controller: DetailsViewController) in
+            
+            guard let `self` = self else { return }
+            
+            DispatchQueue.main.async {
+                self.detailsViewController = controller
+                self.detailsViewController?.viewModel.backPressed()
+                self.view.addSubview(controller.view)
+                
+            }
+        }
+        
+        viewModel.setupDetailsView()
+        
+        
+        // TODO: Remove, this is here to test the details view
+        
+        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: { _ in
+            self.loadDetailsOverlayWith(interactionId: "")
+        })
+    }
+        
+    func loadDetailsOverlayWith(interactionId: String) {
+        
+        // TODO: Refactor to real MVVM later
+        if let detailsViewController = detailsViewController {
+            detailsViewController.viewModel.setupWithInteractionId(interactionId: interactionId)
+        }
+    }
+    
+//    func animateDetails(with: DetailsPresentation, animated: Bool) {
+//
+//        guard let detailsViewController = detailsViewController else {
+//            return
+//        }
+//
+//        let duration = animated ? 0.6 : 0.0
+//
+//        // Basic animations, should ease in etc in next pass
+//        switch with {
+//            case .offScreen:
+//                UIView.animate(withDuration: duration , animations: {
+//                    detailsViewController.view.frame = CGRect(x: 0, y: -detailsViewController.view.frame.size.height, width: detailsViewController.view.frame.size.width, height: detailsViewController.view.frame.size.height)
+//
+//                })
+//
+//
+//            case .fullScreen:
+//                UIView.animate(withDuration: duration, animations: {
+//                    detailsViewController.view.frame = CGRect(x: 0, y:0, width: detailsViewController.view.frame.size.width, height: detailsViewController.view.frame.size.height)
+//
+//                })
+//        }
+//    }
 }

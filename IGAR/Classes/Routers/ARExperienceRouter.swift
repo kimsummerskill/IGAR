@@ -25,6 +25,7 @@ class ARExperienceRouter: MVVMRouter, AppNavigationProtocol {
         let arExperienceViewModel = ARExperienceViewModel(router: self)
         
         arExperienceViewController.viewModel = arExperienceViewModel
+        arExperienceViewController.setupExperienceFeatures()
         baseViewController.present(arExperienceViewController, animated: true)
         
     }
