@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "googlelarge.png"
+      "filename" : "20181008_155334.jpg"
     }
   ],
   "info" : {
@@ -10,6 +10,7 @@
     "author" : "xcode"
   },
   "properties" : {
-    "width" : 18
+    "width" : 20,
+    "unit" : "centimeters"
   }
 }
