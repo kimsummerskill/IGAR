@@ -15,7 +15,7 @@ class DetailsRouter: MVVMRouter, AppNavigationProtocol {
         case fullScreen
     }
     
-    let transitionDuration =  0.6
+    let transitionDuration =  0.5
     
     weak var baseViewController: UIViewController?
     
@@ -33,7 +33,7 @@ class DetailsRouter: MVVMRouter, AppNavigationProtocol {
         
         if let context = context as? RouteType {
             
-            let duration = animated ? 0.5 : 0.0
+            let duration = animated ? transitionDuration : 0.0
             
             switch context {
                 case .offScreen:
