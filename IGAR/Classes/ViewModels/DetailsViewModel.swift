@@ -33,7 +33,7 @@ class DetailsViewModel: MVVMViewModel {
         onDataUpdate?()
         
         // Present full screen
-        router.enqueueRoute(with: DetailsRouter.RouteType.fullScreen)
+        router.enqueueRoute(with: DetailsRouter.RouteType.teaser)
     }
     
     // From button or maybe swipe
