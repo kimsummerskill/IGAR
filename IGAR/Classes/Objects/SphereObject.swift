@@ -17,7 +17,7 @@ class SphereObject: SCNSphere {
         super.init()
     }
     
-    init(with interactionId: String, radius: CGFloat, texture: String) {
+    init(interactionId: String, radius: CGFloat, texture: String) {
         
         super.init()
         
@@ -27,7 +27,6 @@ class SphereObject: SCNSphere {
         var newMaterials = [SCNMaterial]()
         
         let material = SCNMaterial()
-        
         material.setMaterial(textureName: texture, colour: nil)
         
         newMaterials.append(material)

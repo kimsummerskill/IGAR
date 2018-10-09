@@ -15,11 +15,7 @@ class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSession
     
     var viewModel: ARExperienceViewModel!
     var detailsViewController: DetailsViewController?
-    
-//    enum DetailsPresentation {
-//        case offScreen
-//        case fullScreen
-//    }
+    var nodesInPlay = [String]()
     
     @IBOutlet var sceneView: ARSCNView!
     
@@ -30,15 +26,8 @@ class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSession
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Set the view's delegate
-        sceneView.delegate = self
-        
-        // Set the session's delegate
-        sceneView.session.delegate = self
-        
-        // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
+    
+        setupScene()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +43,34 @@ class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSession
         sceneView.session.pause()
     }
     
+    func setupScene() {
+
+        // Set the view's delegate
+        sceneView.delegate = self
+        
+        // Set the session's delegate
+        sceneView.session.delegate = self
+        
+        // Show statistics such as fps and timing information
+        sceneView.showsStatistics = true
+        sceneView.automaticallyUpdatesLighting = true
+        
+        // Create a directional light node with shadow
+        let directionalNode = SCNNode()
+        directionalNode.light = SCNLight()
+        directionalNode.light?.type = SCNLight.LightType.directional
+        directionalNode.light?.color = UIColor.white
+        directionalNode.light?.castsShadow = true
+        directionalNode.light?.automaticallyAdjustsShadowProjection = true
+        directionalNode.light?.shadowSampleCount = 64
+        directionalNode.light?.shadowRadius = 16
+        directionalNode.light?.shadowMode = .deferred
+        directionalNode.light?.shadowMapSize = CGSize(width: 2048, height: 2048)
+        directionalNode.light?.shadowColor = UIColor.black.withAlphaComponent(0.75)
+        
+        sceneView.pointOfView?.addChildNode(directionalNode)
+
+    }
     // MARK: - ARSessionDelegate
     
     public func session(_ session: ARSession, didUpdate frame: ARFrame) {
@@ -65,42 +82,77 @@ class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSession
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         
-        print("works")
-        
-        // If this is our anchor, create a node
-        //if self.detectedDataAnchor?.identifier == anchor.identifier {
-        
-        // Create a 3D Cup to display
-        guard let virtualObjectScene = SCNScene(named: "cup.scn", inDirectory: "Models.scnassets/cup") else {
+        guard let imageAnchor = anchor as? ARImageAnchor else {
             return nil
         }
         
-        let wrapperNode = SCNNode()
+        let refImage = imageAnchor.referenceImage
+        let referenceImageName = refImage.name ?? "unknown"
+    
+        // Lets get our prefix and store it so we dont end up with multiples of the same item overlapping eachother as it will detect small, med, large and try to put 3 objects in same place.
+        let strArr = referenceImageName.components(separatedBy: "_")
         
-        for child in virtualObjectScene.rootNode.childNodes {
-            child.geometry?.firstMaterial?.lightingModel = .physicallyBased
-            child.movabilityHint = .movable
-            wrapperNode.addChildNode(child)
+        print("found: \(strArr[0])")
+        
+        if strArr.count > 0 {
+            
+            let name = strArr[0]
+            
+            if nodesInPlay.contains(name) {
+                return nil
+            }
+
+            // Using a cube for now
+            let box = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
+            let material = SCNMaterial()
+            
+            // Image name will be the prefix of the image group
+            material.diffuse.contents = UIImage(named: name)
+            box.materials = [material]
+            let node = SCNNode(geometry: box)
+
+            node.name = name
+            
+            nodesInPlay.append(name)
+            
+            return node
         }
-        
-        // Set its position based off the anchor
-        wrapperNode.transform = SCNMatrix4(anchor.transform)
-        
-        return wrapperNode
-        //}
-        
-        //return nil
+
+        return nil
     }
     
     // Called whenever we want to reset, for example, maybe when the user dismisses the details or
     // when the focus is lost and the 3d objects dissappear.
     func resetConfiguration() {
+        
         guard let referenceImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else { return }
+        
+        // Clear out our node id's
+        nodesInPlay.removeAll()
         
         let configuration = ARWorldTrackingConfiguration()
         configuration.detectionImages = referenceImages
+        configuration.isLightEstimationEnabled = true
         let options: ARSession.RunOptions = [.resetTracking, .removeExistingAnchors]
         sceneView.session.run(configuration, options: options)
+    }
+    
+    //  #MARK: Touches / Gestures
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if let touch = touches.first {
+            if(touch.view == sceneView) {
+                
+                let viewTouchLocation:CGPoint = touch.location(in: sceneView)
+                guard let result = sceneView.hitTest(viewTouchLocation, options: nil).first else {
+                    return
+                }
+                
+                if let name = result.node.name {
+                    loadDetailsOverlayWith(interactionId: name)
+                }
+            }
+        }
     }
     
     
@@ -148,29 +200,4 @@ class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSession
             detailsViewController.viewModel.setupWithInteractionId(interactionId: interactionId)
         }
     }
-    
-//    func animateDetails(with: DetailsPresentation, animated: Bool) {
-//
-//        guard let detailsViewController = detailsViewController else {
-//            return
-//        }
-//
-//        let duration = animated ? 0.6 : 0.0
-//
-//        // Basic animations, should ease in etc in next pass
-//        switch with {
-//            case .offScreen:
-//                UIView.animate(withDuration: duration , animations: {
-//                    detailsViewController.view.frame = CGRect(x: 0, y: -detailsViewController.view.frame.size.height, width: detailsViewController.view.frame.size.width, height: detailsViewController.view.frame.size.height)
-//
-//                })
-//
-//
-//            case .fullScreen:
-//                UIView.animate(withDuration: duration, animations: {
-//                    detailsViewController.view.frame = CGRect(x: 0, y:0, width: detailsViewController.view.frame.size.width, height: detailsViewController.view.frame.size.height)
-//
-//                })
-//        }
-//    }
 }

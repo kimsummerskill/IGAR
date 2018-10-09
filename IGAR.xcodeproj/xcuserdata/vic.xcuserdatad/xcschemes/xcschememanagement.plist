@@ -9,29 +9,6 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>IGARSimulator.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-	</dict>
-	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>91E9705A216B9FDA00B488A8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>91E97070216B9FDD00B488A8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>91E9707B216B9FDD00B488A8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 	</dict>
 </dict>
 </plist>
