@@ -43,6 +43,10 @@ class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSession
         sceneView.session.pause()
     }
     
+    @IBAction func resetPressed(_ sender: Any) {
+        resetConfiguration()
+    }
+    
     func setupScene() {
 
         // Set the view's delegate
@@ -135,6 +139,8 @@ class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSession
         configuration.isLightEstimationEnabled = true
         let options: ARSession.RunOptions = [.resetTracking, .removeExistingAnchors]
         sceneView.session.run(configuration, options: options)
+        
+        detailsViewController?.viewModel.userSwipedDown()
     }
     
     //  #MARK: Touches / Gestures
