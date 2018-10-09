@@ -105,7 +105,7 @@ class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSession
             if nodesInPlay.contains(name) {
                 return nil
             }
-
+            
             // Using a cube for now
             let box = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
             let material = SCNMaterial()
@@ -114,12 +114,12 @@ class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSession
             material.diffuse.contents = UIImage(named: name)
             box.materials = [material]
             let node = SCNNode(geometry: box)
-
+            
             node.name = name
             
             nodesInPlay.append(name)
-            
             return node
+        
         }
 
         return nil
