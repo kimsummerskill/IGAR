@@ -44,6 +44,7 @@ class FakeTickStream: TickStream {
     }
     
     func subsribe(symbol: String, currency: Currency, cb:@escaping TickCallback) {
+        print("VX fake tick stream subscribing to symbol: \(symbol)")
         let tickSub: TickSubscription = symbol
         subs[tickSub] = cb
         start()
@@ -54,6 +55,10 @@ class FakeTickStream: TickStream {
             self.state = .live
             self.stream()
         }
+    }
+    
+    private func stop() {
+        
     }
     private func stream() {
         self.timer = Timer.scheduledTimer(timeInterval: 0.1,
@@ -80,7 +85,7 @@ class FakeTickStream: TickStream {
     }
     private func walk(symbol:String) -> Float? {
         guard let current = fakePrices[symbol] else {
-            print("VX: missing fake price for \(symbol)")
+            print("VX: missing fake price for '\(symbol)'")
             return nil
         }
         let multiplier = self.randomMultipler()
