@@ -45,6 +45,7 @@ class FakeTickStream: TickStream {
     }
     
     func subsribe(symbol: String, currency: Currency, cb:@escaping TickCallback) {
+        stop()
         print("VX fake tick stream subscribing to symbol: \(symbol)")
         let tickSub: TickSubscription = symbol
         subs[tickSub] = cb
@@ -60,6 +61,9 @@ class FakeTickStream: TickStream {
     }
     
     public func stop() {
+        subs = [:]
+        self.state = .ready
+        self.timer?.invalidate()
         self.timer = nil
     }
     
