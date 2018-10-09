@@ -10,6 +10,8 @@ import UIKit
 
 class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
     
+    @IBOutlet var lowLabel: UILabel!
+    @IBOutlet var highLabel: UILabel!
     var viewModel: DetailsViewModel!
     
     override func viewDidLoad() {
@@ -21,8 +23,6 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
                 self.reloadData()
             }
         }
-        
-        
     }
     
     // Refresh stuff
