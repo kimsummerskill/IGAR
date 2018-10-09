@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var flowCoordinator: FlowCoordinator!
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        HTTPCookieStorage.shared.cookieAcceptPolicy = .always
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "detailsViewController") as? DetailsViewController else {
             return false
@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rooter = SimulatorRouter()
         let vm = DetailsViewModel(router: rooter)
         vm.delegate = vc
-        vm.setupWithInteractionId(interactionId: "GOOGL")
+        vm.setupWithInteractionId(interactionId: "CMCX")
         
         vc.viewModel = vm
         let localWindow = UIWindow(frame: UIScreen.main.bounds)

@@ -14,29 +14,27 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
     @IBOutlet var highLabel: UILabel!
     @IBOutlet var titleLabel: UILabel?
     @IBOutlet var image: UIImageView?
+    @IBOutlet var webView: UIWebView?
     var viewModel: DetailsViewModel!
     
     var tickerName: String = ""
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         lowLabel.text = ""
         highLabel.text = ""
         let swipeDownGestureRecogniser = UISwipeGestureRecognizer.init(target: self, action: #selector(swipDownHandler(gestureRecognizer:)))
         swipeDownGestureRecogniser.direction = .down
-        /* //VX:TODO rm?
-        viewModel.onDataUpdate = { [weak self] in
-            DispatchQueue.main.async {
-                guard let `self` = self else { return }
-                self.reloadData()
-            }
-        }
- */
         self.loadTicker(name: tickerName)
         view.addGestureRecognizer(swipeDownGestureRecogniser)
 
         let swipeUpGestureRecogniser = UISwipeGestureRecognizer.init(target: self, action: #selector(swipUpHandler(gestureRecognizer:)))
         swipeUpGestureRecogniser.direction = .up
         view.addGestureRecognizer(swipeUpGestureRecogniser)
+        
+        
+        self.view.backgroundColor = UIColor(white: 0.0, alpha: 0.6)
     }
     
     // Refresh stuff
@@ -48,7 +46,7 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
         viewModel.backPressed()
     }
     @IBAction func tradePressed() {
-        print("VX trade pressed")
+        viewModel.openIG()
     }
     
     @objc func swipDownHandler(gestureRecognizer:UISwipeGestureRecognizer) {
@@ -71,8 +69,17 @@ extension DetailsViewController: DetailsDelegate {
     func loadTicker(name: String) {
         self.tickerName = name
         print("VX loading: \(tickerName)")
-        titleLabel?.text = name
+        titleLabel?.text = viewModel.interactionIdToActualName(id: name)
         let i = UIImage(named: name)
         image?.image = i
+        guard let vm = viewModel else {
+            return
+        }
+        guard let url = vm.fetchYahooURL(ticker: name) else {
+            return
+        }
+        let request = URLRequest(url: url)
+        print("VX ffs?: \(tickerName)")
+        webView?.loadRequest(request)
     }
 }
