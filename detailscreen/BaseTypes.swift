@@ -34,10 +34,13 @@ struct Spread {
         self.low = Price(value: base.value - diff, currency: base.currency)
         self.high = Price(value: base.value + diff, currency: base.currency)
     }
+    
     func displayLow() -> String {
-        return "\(self.low.currency.symbol)\(self.low.value)"
+        let valString: String  = String(format: "%.2f", self.low.value)
+        return "\(self.low.currency.symbol)\(valString)"
     }
     func displayHigh() -> String {
-        return "\(self.high.currency.symbol)\(self.high.value)"
+        let valString: String  = String(format: "%.2f", self.high.value)
+        return "\(self.high.currency.symbol)\(valString)"
     }
 }
