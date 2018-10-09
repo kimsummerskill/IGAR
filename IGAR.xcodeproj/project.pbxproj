@@ -31,9 +31,9 @@
 		1CE35762216CA14400064CDA /* SCNMaterial+Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E970B5216BABC800B488A8 /* SCNMaterial+Texture.swift */; };
 		1CE35765216CA9F500064CDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E97064216B9FDA00B488A8 /* Main.storyboard */; };
 		1CE35766216CB93100064CDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91F1BEA0216C10120016AD5B /* Assets.xcassets */; };
-		9147336F216CCDA300BE43D8 /* SCNNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147336E216CCDA300BE43D8 /* SCNNode+Helpers.swift */; };
 		1CE35769216CCDAB00064CDA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE35768216CCDAB00064CDA /* WebKit.framework */; };
 		1CE3576A216CCDC600064CDA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE35768216CCDAB00064CDA /* WebKit.framework */; };
+		9147336F216CCDA300BE43D8 /* SCNNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147336E216CCDA300BE43D8 /* SCNNode+Helpers.swift */; };
 		91E9705F216B9FDA00B488A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E9705E216B9FDA00B488A8 /* AppDelegate.swift */; };
 		91E97061216B9FDA00B488A8 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E97060216B9FDA00B488A8 /* Models.scnassets */; };
 		91E97066216B9FDA00B488A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E97064216B9FDA00B488A8 /* Main.storyboard */; };
@@ -95,8 +95,8 @@
 		1C02B30F216C8F8900F610BA /* FinanceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceUtil.swift; sourceTree = "<group>"; };
 		1C02B310216C8F8900F610BA /* DetailVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVM.swift; sourceTree = "<group>"; };
 		1C02B319216C9AE000F610BA /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
-		9147336E216CCDA300BE43D8 /* SCNNode+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNNode+Helpers.swift"; sourceTree = "<group>"; };
 		1CE35768216CCDAB00064CDA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		9147336E216CCDA300BE43D8 /* SCNNode+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNNode+Helpers.swift"; sourceTree = "<group>"; };
 		91E9705B216B9FDA00B488A8 /* IGAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E9705E216B9FDA00B488A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91E97060216B9FDA00B488A8 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
