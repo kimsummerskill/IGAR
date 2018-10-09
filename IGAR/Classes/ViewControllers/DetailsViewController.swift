@@ -32,6 +32,8 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
         let swipeUpGestureRecogniser = UISwipeGestureRecognizer.init(target: self, action: #selector(swipUpHandler(gestureRecognizer:)))
         swipeUpGestureRecogniser.direction = .up
         view.addGestureRecognizer(swipeUpGestureRecogniser)
+        
+        self.view.backgroundColor = UIColor(white: 0.4, alpha: 0.6)
     }
     
     // Refresh stuff

@@ -64,7 +64,6 @@ class DetailsViewModel: MVVMViewModel {
     
     
     public func fetchYahooURL(ticker: String) -> URL? {
-        //VXTODO
         let query = "\(stockMarket(id: ticker)):\(ticker)"
         let string  = "https://www.google.com/finance?q=\(query)"
         guard let url =  URL(string: string) else {
