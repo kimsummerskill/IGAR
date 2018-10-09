@@ -231,9 +231,9 @@
                         <viewLayoutGuide key="safeArea" id="xXQ-lF-vhn"/>
                     </view>
                     <connections>
-                        <outlet property="highLabel" destination="ZFV-73-0DS" id="3NI-AP-GLI"/>
+                        <outlet property="highLabel" destination="w6h-up-XIR" id="CoZ-zv-fg8"/>
                         <outlet property="image" destination="Iqd-0P-RM2" id="aWr-gl-yMT"/>
-                        <outlet property="lowLabel" destination="w6h-up-XIR" id="1B0-aS-w6i"/>
+                        <outlet property="lowLabel" destination="ZFV-73-0DS" id="Wbu-s3-YQ2"/>
                         <outlet property="titleLabel" destination="6fr-Yb-E25" id="vok-M9-rMi"/>
                     </connections>
                 </viewController>

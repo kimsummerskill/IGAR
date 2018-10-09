@@ -23,14 +23,6 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
         highLabel.text = ""
         let swipeDownGestureRecogniser = UISwipeGestureRecognizer.init(target: self, action: #selector(swipDownHandler(gestureRecognizer:)))
         swipeDownGestureRecogniser.direction = .down
-        /* //VX:TODO rm?
-        viewModel.onDataUpdate = { [weak self] in
-            DispatchQueue.main.async {
-                guard let `self` = self else { return }
-                self.reloadData()
-            }
-        }
- */
         self.loadTicker(name: tickerName)
         view.addGestureRecognizer(swipeDownGestureRecogniser)
 
@@ -71,7 +63,7 @@ extension DetailsViewController: DetailsDelegate {
     func loadTicker(name: String) {
         self.tickerName = name
         print("VX loading: \(tickerName)")
-        titleLabel?.text = name
+        titleLabel?.text = viewModel.interactionIdToActualName(id: name)
         let i = UIImage(named: name)
         image?.image = i
     }

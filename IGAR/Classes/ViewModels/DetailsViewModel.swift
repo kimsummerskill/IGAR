@@ -58,4 +58,26 @@ class DetailsViewModel: MVVMViewModel {
     func userSwipedUp() {
         router.enqueueRoute(with: DetailsRouter.RouteType.fullScreen)
     }
+    
+    public func interactionIdToActualName(id: String) -> String {
+        switch id {
+        case "FB":
+            return "Facebook"
+        case "GOOGL":
+            return "Google"
+        case "IGG":
+            return "IG Index"
+        case "UN":
+            return "Unilever"
+        case "CMC":
+            return "CMC Markets"
+        default:
+             return ""
+        }
+    }
+    
+    func openIG() {
+        
+      //  UIApplication.sharedApplication().openURL(URL(string: "https://itunes.apple.com/gb/app/ig-spread-bet-and-cfd-trading/id406492428?mt=8")!)
+    }
 }
