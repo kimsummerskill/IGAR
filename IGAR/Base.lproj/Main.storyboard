@@ -139,7 +139,7 @@
                                     <constraint firstAttribute="height" constant="25" id="Rcc-Sd-3mW"/>
                                     <constraint firstAttribute="width" constant="100" id="gNQ-VT-3m4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -152,51 +152,51 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2Jv-Dr-n5m">
-                                <rect key="frame" x="7" y="105" width="335" height="70"/>
+                                <rect key="frame" x="20" y="105" width="335" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="756-Q9-Z6Y">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="35"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEW-bA-B4f">
-                                                <rect key="frame" x="20" y="4.5" width="35" height="26.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEW-bA-B4f">
+                                                <rect key="frame" x="28" y="10" width="29.5" height="15"/>
+                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
+                                                <color key="textColor" red="1" green="0.093322322275342873" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOK-1r-zLR">
-                                                <rect key="frame" x="278" y="4.5" width="37" height="26.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOK-1r-zLR">
+                                                <rect key="frame" x="280.5" y="10.5" width="24.5" height="15"/>
+                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
+                                                <color key="textColor" red="0.2156862745" green="0.63137254899999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="aOK-1r-zLR" firstAttribute="centerY" secondItem="756-Q9-Z6Y" secondAttribute="centerY" id="0R4-vw-9qO"/>
-                                            <constraint firstItem="rEW-bA-B4f" firstAttribute="leading" secondItem="756-Q9-Z6Y" secondAttribute="leading" constant="20" id="EXj-x3-xcV"/>
+                                            <constraint firstItem="rEW-bA-B4f" firstAttribute="leading" secondItem="756-Q9-Z6Y" secondAttribute="leading" constant="28" id="EXj-x3-xcV"/>
                                             <constraint firstItem="rEW-bA-B4f" firstAttribute="centerY" secondItem="756-Q9-Z6Y" secondAttribute="centerY" id="Lr4-fN-2YE"/>
-                                            <constraint firstAttribute="trailing" secondItem="aOK-1r-zLR" secondAttribute="trailing" constant="20" id="rOJ-fW-Hbz"/>
+                                            <constraint firstAttribute="trailing" secondItem="aOK-1r-zLR" secondAttribute="trailing" constant="30" id="rOJ-fW-Hbz"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Jb-m3-zRW">
                                         <rect key="frame" x="0.0" y="35" width="335" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFV-73-0DS">
-                                                <rect key="frame" x="20" y="7.5" width="52.5" height="20"/>
+                                                <rect key="frame" x="20" y="7.5" width="43.5" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="NMx-Ze-ZWT"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6h-up-XIR">
-                                                <rect key="frame" x="262.5" y="7.5" width="52.5" height="20"/>
+                                                <rect key="frame" x="271.5" y="7.5" width="43.5" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="9Eg-rF-MSX"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" red="0.21568627450980393" green="0.63137254901960782" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -218,14 +218,14 @@
                         <constraints>
                             <constraint firstItem="Iqd-0P-RM2" firstAttribute="top" secondItem="xXQ-lF-vhn" secondAttribute="top" constant="10" id="5EU-og-vZX"/>
                             <constraint firstItem="6fr-Yb-E25" firstAttribute="centerX" secondItem="iwy-3l-Jzd" secondAttribute="centerX" id="ByW-s3-kLa"/>
-                            <constraint firstItem="2Jv-Dr-n5m" firstAttribute="leading" secondItem="xXQ-lF-vhn" secondAttribute="leading" constant="7" id="CVd-iZ-4BQ"/>
+                            <constraint firstItem="2Jv-Dr-n5m" firstAttribute="leading" secondItem="xXQ-lF-vhn" secondAttribute="leading" constant="20" id="CVd-iZ-4BQ"/>
                             <constraint firstItem="xXQ-lF-vhn" firstAttribute="trailing" secondItem="2Vy-eR-lbX" secondAttribute="trailing" constant="19" id="HyR-QV-D5T"/>
                             <constraint firstItem="rjo-Mu-wTM" firstAttribute="centerX" secondItem="iwy-3l-Jzd" secondAttribute="centerX" id="KvP-wv-ToQ"/>
                             <constraint firstItem="2Jv-Dr-n5m" firstAttribute="top" secondItem="6fr-Yb-E25" secondAttribute="bottom" constant="30" id="OmS-LQ-aqV"/>
                             <constraint firstItem="rjo-Mu-wTM" firstAttribute="top" secondItem="2Jv-Dr-n5m" secondAttribute="bottom" constant="10" id="PUp-6J-4yh"/>
                             <constraint firstItem="Iqd-0P-RM2" firstAttribute="leading" secondItem="xXQ-lF-vhn" secondAttribute="leading" constant="20" id="TFJ-XP-CtN"/>
                             <constraint firstItem="2Vy-eR-lbX" firstAttribute="top" secondItem="xXQ-lF-vhn" secondAttribute="top" constant="9" id="aRw-qK-AQf"/>
-                            <constraint firstItem="xXQ-lF-vhn" firstAttribute="trailing" secondItem="2Jv-Dr-n5m" secondAttribute="trailing" constant="33" id="cnj-Ua-zjd"/>
+                            <constraint firstItem="xXQ-lF-vhn" firstAttribute="trailing" secondItem="2Jv-Dr-n5m" secondAttribute="trailing" constant="20" id="cnj-Ua-zjd"/>
                             <constraint firstItem="6fr-Yb-E25" firstAttribute="top" secondItem="xXQ-lF-vhn" secondAttribute="top" constant="30" id="nsU-ko-K1Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xXQ-lF-vhn"/>
