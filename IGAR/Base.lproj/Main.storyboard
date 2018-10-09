@@ -225,15 +225,15 @@
                             <constraint firstItem="5Rl-YJ-Xd2" firstAttribute="top" secondItem="2Jv-Dr-n5m" secondAttribute="bottom" constant="86" id="0AU-c1-EzE"/>
                             <constraint firstItem="6fr-Yb-E25" firstAttribute="leading" secondItem="Iqd-0P-RM2" secondAttribute="trailing" constant="10" id="26C-jt-qLI"/>
                             <constraint firstItem="Iqd-0P-RM2" firstAttribute="top" secondItem="xXQ-lF-vhn" secondAttribute="top" constant="10" id="5EU-og-vZX"/>
-                            <constraint firstItem="xXQ-lF-vhn" firstAttribute="trailing" secondItem="5Rl-YJ-Xd2" secondAttribute="trailing" constant="18" id="AE9-o8-jqq"/>
+                            <constraint firstItem="xXQ-lF-vhn" firstAttribute="trailing" secondItem="5Rl-YJ-Xd2" secondAttribute="trailing" id="AE9-o8-jqq"/>
                             <constraint firstItem="2Jv-Dr-n5m" firstAttribute="leading" secondItem="xXQ-lF-vhn" secondAttribute="leading" constant="20" id="CVd-iZ-4BQ"/>
                             <constraint firstItem="6fr-Yb-E25" firstAttribute="centerX" secondItem="iwy-3l-Jzd" secondAttribute="centerX" id="H9c-6n-eeE"/>
                             <constraint firstItem="2Jv-Dr-n5m" firstAttribute="top" secondItem="6fr-Yb-E25" secondAttribute="bottom" constant="30" id="OmS-LQ-aqV"/>
                             <constraint firstItem="Iqd-0P-RM2" firstAttribute="leading" secondItem="xXQ-lF-vhn" secondAttribute="leading" constant="20" id="TFJ-XP-CtN"/>
-                            <constraint firstItem="5Rl-YJ-Xd2" firstAttribute="leading" secondItem="xXQ-lF-vhn" secondAttribute="leading" constant="18" id="Zgd-UF-vhL"/>
+                            <constraint firstItem="5Rl-YJ-Xd2" firstAttribute="leading" secondItem="xXQ-lF-vhn" secondAttribute="leading" id="Zgd-UF-vhL"/>
                             <constraint firstItem="xXQ-lF-vhn" firstAttribute="trailing" secondItem="2Jv-Dr-n5m" secondAttribute="trailing" constant="20" id="cnj-Ua-zjd"/>
                             <constraint firstItem="6fr-Yb-E25" firstAttribute="top" secondItem="xXQ-lF-vhn" secondAttribute="top" constant="30" id="nsU-ko-K1Q"/>
-                            <constraint firstItem="xXQ-lF-vhn" firstAttribute="bottom" secondItem="5Rl-YJ-Xd2" secondAttribute="bottom" id="y8x-Tb-Xot"/>
+                            <constraint firstAttribute="bottom" secondItem="5Rl-YJ-Xd2" secondAttribute="bottom" id="y8x-Tb-Xot"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xXQ-lF-vhn"/>
                     </view>
