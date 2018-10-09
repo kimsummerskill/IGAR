@@ -97,12 +97,12 @@ class FakeTickStream: TickStream {
         return next
     }
     private func populateFakePrices() {
-        fakePrices["FB"] = 203.00
+        fakePrices["FB"] = 157.25
         fakePrices["GOOGL"] = 1154.0
         fakePrices["IGG"] = 613.99
-        fakePrices["AAPL"] = 1154.0
-        fakePrices["UN"] = 903.0
-        fakePrices["CMC"] = 34.0
+        fakePrices["AAPL"] = 223.77
+        fakePrices["UN"] = 53.91
+        fakePrices["CMCX"] = 134.0
     }
     
     

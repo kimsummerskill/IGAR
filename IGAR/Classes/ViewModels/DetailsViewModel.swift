@@ -25,6 +25,7 @@ class DetailsViewModel: MVVMViewModel {
     var stream: TickStream
     weak var delegate: DetailsDelegate?
     required init(router: MVVMRouter) {
+        
         self.router = router
         let currency = Currency(symbol: "£")
         stream = FakeTickStream(currency: currency)
@@ -63,12 +64,23 @@ class DetailsViewModel: MVVMViewModel {
     
     
     public func fetchYahooURL(ticker: String) -> URL? {
-        guard let url =  URL(string: "https://finance.yahoo.com/quote/\(ticker)/?guccounter=1") else {
+        let query = "\(stockMarket(id: ticker)):\(ticker)"
+        let string  = "https://www.google.com/finance?q=\(query)"
+        guard let url =  URL(string: string) else {
+            print("VX invalid url: \(string)")
             return nil
         }
         return url
     }
     
+    public func stockMarket(id: String) -> String {
+        switch id {
+        case "IGG", "CMCX":
+            return "LSE"
+        default:
+            return "NYSE"
+        }
+    }
     public func interactionIdToActualName(id: String) -> String {
         switch id {
         case "FB":
@@ -79,14 +91,14 @@ class DetailsViewModel: MVVMViewModel {
             return "IG Index"
         case "UN":
             return "Unilever"
-        case "CMC":
+        case "CMCX":
             return "CMC Markets"
         default:
              return ""
         }
     }
     public func openIG() {
-        if let url = URL(string:"https://itunes.apple.com/gb/app/ig-spread-bet-and-cfd-trading/id406492428?mt=8"), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string:"https://itunes.apple.com/gb/app/apple-store/id406492428?mt=8"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
     }

@@ -19,6 +19,8 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
     
     var tickerName: String = ""
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         lowLabel.text = ""
         highLabel.text = ""
@@ -30,6 +32,8 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
         let swipeUpGestureRecogniser = UISwipeGestureRecognizer.init(target: self, action: #selector(swipUpHandler(gestureRecognizer:)))
         swipeUpGestureRecogniser.direction = .up
         view.addGestureRecognizer(swipeUpGestureRecogniser)
+        
+        self.view.backgroundColor = UIColor(white: 0.4, alpha: 0.6)
     }
     
     // Refresh stuff
@@ -67,5 +71,14 @@ extension DetailsViewController: DetailsDelegate {
         titleLabel?.text = viewModel.interactionIdToActualName(id: name)
         let i = UIImage(named: name)
         image?.image = i
+        guard let vm = viewModel else {
+            return
+        }
+        guard let url = vm.fetchYahooURL(ticker: name) else {
+            return
+        }
+        let request = URLRequest(url: url)
+        print("VX ffs?: \(tickerName)")
+        webView?.loadRequest(request)
     }
 }
