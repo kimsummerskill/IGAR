@@ -41,4 +41,12 @@ class DetailsViewModel: MVVMViewModel {
         // Animate off screen
         router.enqueueRoute(with: DetailsRouter.RouteType.offScreen)
     }
+    
+    func userSwipedDown() {
+        router.enqueueRoute(with: DetailsRouter.RouteType.offScreen)
+    }
+    
+    func userSwipedUp() {
+        router.enqueueRoute(with: DetailsRouter.RouteType.fullScreen)
+    }
 }

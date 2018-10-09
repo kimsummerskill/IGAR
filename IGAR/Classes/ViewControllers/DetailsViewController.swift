@@ -22,6 +22,14 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
             }
         }
         
+        let swipeDownGestureRecogniser = UISwipeGestureRecognizer.init(target: self, action: #selector(swipDownHandler(gestureRecognizer:)))
+        swipeDownGestureRecogniser.direction = .down
+        
+        view.addGestureRecognizer(swipeDownGestureRecogniser)
+
+        let swipeUpGestureRecogniser = UISwipeGestureRecognizer.init(target: self, action: #selector(swipUpHandler(gestureRecognizer:)))
+        swipeUpGestureRecogniser.direction = .up
+        view.addGestureRecognizer(swipeUpGestureRecogniser)
         
     }
     
@@ -32,5 +40,13 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
     
     @IBAction func backPressed(_ sender: Any) {
         viewModel.backPressed()
+    }
+    
+    @objc func swipDownHandler(gestureRecognizer:UISwipeGestureRecognizer) {
+        viewModel.userSwipedDown()
+    }
+    
+    @objc func swipUpHandler(gestureRecognizer:UISwipeGestureRecognizer) {
+        viewModel.userSwipedUp()
     }
 }
