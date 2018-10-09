@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var flowCoordinator: FlowCoordinator!
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        HTTPCookieStorage.shared.cookieAcceptPolicy = .always
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "detailsViewController") as? DetailsViewController else {
             return false
