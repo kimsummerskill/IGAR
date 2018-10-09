@@ -6,31 +6,37 @@
 //  Copyright © 2018 Kim Summerskill. All rights reserved.
 //
 
+
+protocol DetailsDelegate: class {
+    func show(spread: Spread)
+}
 class DetailsViewModel: MVVMViewModel {
     
     var router: MVVMRouter
-    
     enum DetailState{
         case showFull
         case hide
     }
     
     var currentState:DetailState = .hide
-    
-    var onDataUpdate:(() -> Void)?
-    
+
+    var stream: TickStream
+    weak var delegate: DetailsDelegate?
     required init(router: MVVMRouter) {
         self.router = router
-
+        let currency = Currency(symbol: "£")
+        stream = FakeTickStream(currency: currency)
     }
     
     // Get your data here then call onDataUpdate
     func setupWithInteractionId(interactionId: String) {
         
         // Load stuff
-        
-        // then on completion refresh view controller
-        onDataUpdate?()
+        print("VX: interaction id to show: \(interactionId)")
+        stream.subsribe(symbol: interactionId, currency: Currency(symbol: "£")) { [weak self] price in
+            let spread = Spread(base: price)
+            self?.delegate?.show(spread: spread)
+        }
         
         // Present full screen
         router.enqueueRoute(with: DetailsRouter.RouteType.teaser)

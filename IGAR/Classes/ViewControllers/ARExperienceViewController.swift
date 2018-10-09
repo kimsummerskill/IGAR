@@ -191,12 +191,6 @@ class ARExperienceViewController: UIViewController, ARSCNViewDelegate, ARSession
         
         viewModel.setupDetailsView()
         
-        
-        // TODO: Remove, this is here to test the details view
-        
-        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: { _ in
-            self.loadDetailsOverlayWith(interactionId: "")
-        })
     }
         
     func loadDetailsOverlayWith(interactionId: String) {

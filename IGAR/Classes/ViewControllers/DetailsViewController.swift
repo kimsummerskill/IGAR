@@ -10,18 +10,13 @@ import UIKit
 
 class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
     
+    @IBOutlet var lowLabel: UILabel!
+    @IBOutlet var highLabel: UILabel!
     var viewModel: DetailsViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel.onDataUpdate = { [weak self] in
-            DispatchQueue.main.async {
-                guard let `self` = self else { return }
-                self.reloadData()
-            }
-        }
-        
+
         let swipeDownGestureRecogniser = UISwipeGestureRecognizer.init(target: self, action: #selector(swipDownHandler(gestureRecognizer:)))
         swipeDownGestureRecogniser.direction = .down
         
@@ -30,7 +25,6 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
         let swipeUpGestureRecogniser = UISwipeGestureRecognizer.init(target: self, action: #selector(swipUpHandler(gestureRecognizer:)))
         swipeUpGestureRecogniser.direction = .up
         view.addGestureRecognizer(swipeUpGestureRecogniser)
-        
     }
     
     // Refresh stuff
@@ -48,5 +42,14 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
     
     @objc func swipUpHandler(gestureRecognizer:UISwipeGestureRecognizer) {
         viewModel.userSwipedUp()
+    }
+}
+
+
+extension DetailsViewController: DetailsDelegate {
+    func show( spread: Spread) {
+        print("VX: spread: \(spread)")
+        self.lowLabel.text = spread.displayLow()
+        self.highLabel.text = spread.displayHigh()
     }
 }
