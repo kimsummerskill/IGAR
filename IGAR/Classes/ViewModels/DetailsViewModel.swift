@@ -33,7 +33,9 @@ class DetailsViewModel: MVVMViewModel {
         
         // Load stuff
         print("VX: interaction id to show: \(interactionId)")
-        stream.subsribe(symbol: interactionId, currency: Currency(symbol: "£")) { [weak self] price in
+        stream.subsribe(symbol: interactionId, currency: Currency(symbol: "£")) { [weak self]
+            price in
+            print("VX: interaction id to show: \(interactionId)")
             let spread = Spread(base: price)
             self?.delegate?.show(spread: spread)
         }

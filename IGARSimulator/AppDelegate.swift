@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let vc = storyboard.instantiateViewController(withIdentifier: "detailsViewController") as? DetailsViewController else {
             return false
         }
-        var rooter = SimulatorRouter()
+        let rooter = SimulatorRouter()
         let vm = DetailsViewModel(router: rooter)
         
         vm.setupWithInteractionId(interactionId: "GOOGL")
