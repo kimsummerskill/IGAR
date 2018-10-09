@@ -65,7 +65,8 @@ class DetailsViewModel: MVVMViewModel {
     
     public func fetchYahooURL(ticker: String) -> URL? {
         //VXTODO
-        let string  = "https://www.google.com/finance?q=NASDAQ:AAPL"
+        let query = "\(stockMarket(id: ticker)):\(ticker)"
+        let string  = "https://www.google.com/finance?q=\(query)"
         guard let url =  URL(string: string) else {
             print("VX invalid url: \(string)")
             return nil
@@ -74,7 +75,12 @@ class DetailsViewModel: MVVMViewModel {
     }
     
     public func stockMarket(id: String) -> String {
-        return ""
+        switch id {
+        case "IGG", "CMCX":
+            return "LSE"
+        default:
+            return "NYSE"
+        }
     }
     public func interactionIdToActualName(id: String) -> String {
         switch id {
@@ -86,7 +92,7 @@ class DetailsViewModel: MVVMViewModel {
             return "IG Index"
         case "UN":
             return "Unilever"
-        case "CMC":
+        case "CMCX":
             return "CMC Markets"
         default:
              return ""

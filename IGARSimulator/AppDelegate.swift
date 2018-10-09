@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rooter = SimulatorRouter()
         let vm = DetailsViewModel(router: rooter)
         vm.delegate = vc
-        vm.setupWithInteractionId(interactionId: "GOOGL")
+        vm.setupWithInteractionId(interactionId: "CMCX")
         
         vc.viewModel = vm
         let localWindow = UIWindow(frame: UIScreen.main.bounds)
