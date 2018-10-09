@@ -40,7 +40,7 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
         viewModel.backPressed()
     }
     @IBAction func tradePressed() {
-        print("VX trade pressed")
+        viewModel.openIG()
     }
     
     @objc func swipDownHandler(gestureRecognizer:UISwipeGestureRecognizer) {

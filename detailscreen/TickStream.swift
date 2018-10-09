@@ -11,6 +11,7 @@ import Foundation
 
 typealias TickCallback = ((Price) -> Void)
 protocol TickStream {
+    func stop()
     func subsribe(symbol: String, currency: Currency, cb:@escaping TickCallback)
 }
 

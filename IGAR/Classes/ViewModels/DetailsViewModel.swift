@@ -6,6 +6,7 @@
 //  Copyright © 2018 Kim Summerskill. All rights reserved.
 //
 
+import UIKit
 
 protocol DetailsDelegate: class {
     func show(spread: Spread)
@@ -52,11 +53,20 @@ class DetailsViewModel: MVVMViewModel {
     }
     
     func userSwipedDown() {
+        self.stream.stop()
         router.enqueueRoute(with: DetailsRouter.RouteType.offScreen)
     }
     
     func userSwipedUp() {
         router.enqueueRoute(with: DetailsRouter.RouteType.fullScreen)
+    }
+    
+    
+    public func fetchYahooURL(ticker: String) -> URL? {
+        guard let url =  URL(string: "https://finance.yahoo.com/quote/\(ticker)/?guccounter=1") else {
+            return nil
+        }
+        return url
     }
     
     public func interactionIdToActualName(id: String) -> String {
@@ -75,9 +85,9 @@ class DetailsViewModel: MVVMViewModel {
              return ""
         }
     }
-    
-    func openIG() {
-        
-      //  UIApplication.sharedApplication().openURL(URL(string: "https://itunes.apple.com/gb/app/ig-spread-bet-and-cfd-trading/id406492428?mt=8")!)
+    public func openIG() {
+        if let url = URL(string:"https://itunes.apple.com/gb/app/ig-spread-bet-and-cfd-trading/id406492428?mt=8"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
     }
 }
