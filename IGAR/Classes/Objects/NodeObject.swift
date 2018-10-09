@@ -23,26 +23,8 @@ class NodeObject: SCNNode {
         super.init()
         
             addCollada2SCNNode(filepath: withName, name: withName)
-
-//            // Drop the object at it's relative position
-//            position = SCNVector3Make(with.position.x, with.position.y, with.position.z)
-//
-//             Get correct scale for object and physics
-            var scaleValue = SCNVector3(1.0, 1.0, 1.0)
-//
-            scaleValue = SCNVector3(Float(size), Float(size), Float(size))
-            transform = SCNMatrix4Scale(self.transform, scaleValue.x, scaleValue.y, scaleValue.z)
-        
-//            // Calculate the physics body for potential interactions / collisions
-            //setPhysics(with: with.physics, scale: scaleValue)
             
             isHidden = false
-            
-//            // Place object flat relative to space
-//            if let eulerAngle = with.eulerAngles {
-//                eulerAngles = eulerAngle
-//            }
-            
         
 //        }
     }
