@@ -60,6 +60,7 @@ class FakeTickStream: TickStream {
     public func stop() {
         self.timer = nil
     }
+    
     private func stream() {
         self.timer = Timer.scheduledTimer(timeInterval: 0.1,
                                     target: self,
