@@ -30,7 +30,6 @@ struct TickSubscription: Equatable {
     
 }
  */
-
 class FakeTickStream: TickStream {
     let currency: Currency
     private var subs: [TickSubscription: TickCallback] = [:]
@@ -58,7 +57,7 @@ class FakeTickStream: TickStream {
         }
     }
     
-    private func stop() {
+    public func stop() {
         self.timer = nil
     }
     private func stream() {
