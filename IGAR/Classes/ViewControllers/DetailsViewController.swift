@@ -19,14 +19,24 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
     var tickerName: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        lowLabel.text = ""
+        highLabel.text = ""
+        let swipeDownGestureRecogniser = UISwipeGestureRecognizer.init(target: self, action: #selector(swipDownHandler(gestureRecognizer:)))
+        swipeDownGestureRecogniser.direction = .down
+        /* //VX:TODO rm?
         viewModel.onDataUpdate = { [weak self] in
             DispatchQueue.main.async {
                 guard let `self` = self else { return }
                 self.reloadData()
             }
         }
+ */
         self.loadTicker(name: tickerName)
+        view.addGestureRecognizer(swipeDownGestureRecogniser)
+
+        let swipeUpGestureRecogniser = UISwipeGestureRecognizer.init(target: self, action: #selector(swipUpHandler(gestureRecognizer:)))
+        swipeUpGestureRecogniser.direction = .up
+        view.addGestureRecognizer(swipeUpGestureRecogniser)
     }
     
     // Refresh stuff
@@ -39,6 +49,14 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
     }
     @IBAction func tradePressed() {
         print("VX trade pressed")
+    }
+    
+    @objc func swipDownHandler(gestureRecognizer:UISwipeGestureRecognizer) {
+        viewModel.userSwipedDown()
+    }
+    
+    @objc func swipUpHandler(gestureRecognizer:UISwipeGestureRecognizer) {
+        viewModel.userSwipedUp()
     }
 }
 

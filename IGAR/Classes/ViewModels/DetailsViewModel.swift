@@ -20,7 +20,7 @@ class DetailsViewModel: MVVMViewModel {
     }
     
     var currentState:DetailState = .hide
-    var onDataUpdate:(() -> Void)?
+
     var stream: TickStream
     weak var delegate: DetailsDelegate?
     required init(router: MVVMRouter) {
@@ -41,9 +41,6 @@ class DetailsViewModel: MVVMViewModel {
             self?.delegate?.show(spread: spread)
         }
         
-        // then on completion refresh view controller
-        onDataUpdate?()
-        
         // Present full screen
         router.enqueueRoute(with: DetailsRouter.RouteType.teaser)
     }
@@ -52,5 +49,13 @@ class DetailsViewModel: MVVMViewModel {
     func backPressed() {
         // Animate off screen
         router.enqueueRoute(with: DetailsRouter.RouteType.offScreen)
+    }
+    
+    func userSwipedDown() {
+        router.enqueueRoute(with: DetailsRouter.RouteType.offScreen)
+    }
+    
+    func userSwipedUp() {
+        router.enqueueRoute(with: DetailsRouter.RouteType.fullScreen)
     }
 }

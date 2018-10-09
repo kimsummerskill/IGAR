@@ -232,6 +232,7 @@
 		91E9708E216BA05200B488A8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				91F1BEA2216CAA350016AD5B /* 3dItems */,
 				91EC9EB5216BB67800A653BE /* Coordinators */,
 				91E970B0216BA89B00B488A8 /* Objects */,
 				91E970A5216BA27A00B488A8 /* Extensions */,
@@ -309,6 +310,13 @@
 				91E97090216BA08C00B488A8 /* UICoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		91F1BEA2216CAA350016AD5B /* 3dItems */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 3dItems;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -31,6 +31,7 @@ class ARExperienceViewModel: MVVMViewModel {
         let router = DetailsRouter()
         router.baseViewController = detailsViewController
         let detailsViewModel = DetailsViewModel(router: router)
+        detailsViewModel.delegate = detailsViewController
         detailsViewController.viewModel = detailsViewModel
         detailsViewController.view.isHidden = false
         
