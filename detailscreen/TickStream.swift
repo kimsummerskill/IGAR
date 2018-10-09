@@ -60,6 +60,7 @@ class FakeTickStream: TickStream {
     public func stop() {
         self.timer = nil
     }
+    
     private func stream() {
         self.timer = Timer.scheduledTimer(timeInterval: 0.1,
                                     target: self,
@@ -98,6 +99,8 @@ class FakeTickStream: TickStream {
         fakePrices["GOOGL"] = 1154.0
         fakePrices["IGG"] = 613.99
         fakePrices["AAPL"] = 1154.0
+        fakePrices["UN"] = 903.0
+        fakePrices["CMC"] = 34.0
     }
     
     
