@@ -44,10 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let storyboard = UIStoryboard(name: "Details", bundle: nil)
-        guard let vc = storyboard.instantiateInitialViewController() as? DetailsViewController else {
-            print("VX: ffs")
-            return false 
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "detailsViewController") as? DetailsViewController else {
+            return false
         }
         var rooter = SimulatorRouter()
         let vm = DetailsViewModel(router: rooter)
