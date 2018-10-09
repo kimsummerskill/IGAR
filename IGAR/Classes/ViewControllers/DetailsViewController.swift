@@ -14,6 +14,7 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
     @IBOutlet var highLabel: UILabel!
     @IBOutlet var titleLabel: UILabel?
     @IBOutlet var image: UIImageView?
+    @IBOutlet var webView: UIWebView?
     var viewModel: DetailsViewModel!
     
     var tickerName: String = ""
