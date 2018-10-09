@@ -98,6 +98,8 @@ class FakeTickStream: TickStream {
         fakePrices["GOOGL"] = 1154.0
         fakePrices["IGG"] = 613.99
         fakePrices["AAPL"] = 1154.0
+        fakePrices["UN"] = 903.0
+        fakePrices["CMC"] = 34.0
     }
     
     
