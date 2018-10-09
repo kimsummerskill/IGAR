@@ -9,6 +9,7 @@
 
 protocol DetailsDelegate: class {
     func show(spread: Spread)
+    func loadTicker(name: String)
 }
 class DetailsViewModel: MVVMViewModel {
     
@@ -30,7 +31,7 @@ class DetailsViewModel: MVVMViewModel {
     
     // Get your data here then call onDataUpdate
     func setupWithInteractionId(interactionId: String) {
-        
+        delegate?.loadTicker(name: interactionId)
         // Load stuff
         print("VX: interaction id to show: \(interactionId)")
         stream.subsribe(symbol: interactionId, currency: Currency(symbol: "£")) { [weak self]
