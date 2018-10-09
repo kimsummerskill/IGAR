@@ -10,6 +10,8 @@ import UIKit
 
 class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
     
+    @IBOutlet var lowLabel: UILabel!
+    @IBOutlet var highLabel: UILabel!
     var viewModel: DetailsViewModel!
     
     override func viewDidLoad() {
@@ -21,8 +23,6 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
                 self.reloadData()
             }
         }
-        
-        
     }
     
     // Refresh stuff
@@ -32,5 +32,14 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
     
     @IBAction func backPressed(_ sender: Any) {
         viewModel.backPressed()
+    }
+}
+
+
+extension DetailsViewController: DetailsDelegate {
+    func show( spread: Spread) {
+        print("VX: spread: \(spread)")
+        self.lowLabel.text = spread.displayLow()
+        self.highLabel.text = spread.displayHigh()
     }
 }
