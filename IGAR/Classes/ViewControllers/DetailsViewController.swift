@@ -34,3 +34,12 @@ class DetailsViewController: UIViewController, MVVMViewControllerProtocol {
         viewModel.backPressed()
     }
 }
+
+
+extension DetailsViewController: DetailsDelegate {
+    func show( spread: Spread) {
+        print("VX: spread: \(spread)")
+        self.lowLabel.text = spread.displayLow()
+        self.highLabel.text = spread.displayHigh()
+    }
+}

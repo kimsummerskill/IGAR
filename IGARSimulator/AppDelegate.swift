@@ -45,18 +45,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let storyboard = UIStoryboard(name: "Details", bundle: nil)
-        guard let details = storyboard.instantiateInitialViewController() as? DetailsViewController else {
+        guard let vc = storyboard.instantiateInitialViewController() as? DetailsViewController else {
             print("VX: ffs")
             return false 
         }
         var rooter = SimulatorRouter()
-        details.viewModel = DetailsViewModel(router: rooter)
+        let vm = DetailsViewModel(router: rooter)
         
+        vm.setupWithInteractionId(interactionId: "GOOGL")
+        vm.delegate = vc
+        vc.viewModel = vm
         let localWindow = UIWindow(frame: UIScreen.main.bounds)
         
         localWindow.backgroundColor = .black
         localWindow.makeKeyAndVisible()
-        localWindow.rootViewController = details
+        localWindow.rootViewController = vc
         window = localWindow
        // self.present(controller, animated: true, completion: nil)
         

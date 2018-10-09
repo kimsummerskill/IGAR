@@ -64,7 +64,6 @@ class FakeTickStream: TickStream {
     }
     @objc private func onTick() {
         if shouldRandomlyDoNothing() {
-            print("VX: skipping")
             return
         }
         for sub in self.subs {
@@ -77,6 +76,7 @@ class FakeTickStream: TickStream {
     private func shouldRandomlyDoNothing() -> Bool {
        let rand =  Float(Float(arc4random()) / Float(UINT32_MAX))
         return rand > 0.2
+        
     }
     private func walk(symbol:String) -> Float? {
         guard let current = fakePrices[symbol] else {
