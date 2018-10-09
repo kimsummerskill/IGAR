@@ -53,12 +53,13 @@ class FakeTickStream: TickStream {
     private func start() {
         if self.state == .ready {
             self.state = .live
+            print("VX stream started")
             self.stream()
         }
     }
     
     private func stop() {
-        
+        self.timer = nil
     }
     private func stream() {
         self.timer = Timer.scheduledTimer(timeInterval: 0.1,
@@ -108,8 +109,5 @@ class FakeTickStream: TickStream {
         let x = Float(Float(arc4random()) / Float(UINT32_MAX))
         
         return (x - 0.5) * 0.01
-    }
-    deinit {
-        print("tick stream dies")
     }
 }
